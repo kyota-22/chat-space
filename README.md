@@ -1,24 +1,43 @@
-# README
+# Users
+|Column|Type|Options|
+|------|----|-------|
+|name|||
+|email|||
+|password|||
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Associations
+- test
+- test
+- test
 
-Things you may want to cover:
+# Groups
+|Column|Type|Options|
+|------|----|-------|
+||||
 
-* Ruby version
+## Associations
+- test
+- test
+- test
 
-* System dependencies
+# GroupUsers
+|Column|Type|Options|
+|------|----|-------|
+||||
+||||
 
-* Configuration
+## Associations
+- test
+- test
 
-* Database creation
+# Messages
+|Column|Type|Options|
+|------|----|-------|
+||||
+||||
+||||
+||||
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Associations
+- test
+- test
