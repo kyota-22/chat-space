@@ -4,23 +4,23 @@
 |name|string|null: false, add_index: true|
 |email|string|null: false, unique: true|
 |password|string|null: false, unique: true|
-|group_id|integer|null:false, foreign_key: true|
 
 ## Associations
 - has_many :messages
-- has_many :groups, through: :GroupUsers
+- has_many :groups, through: :group_users
+- has_many :group_users
 
 # Groups
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false,|
-|user_id|integer|null:false, foreign_key: true|
+|name|string|null: false,|
 
 ## Associations
 - has_many :messages
-- has_many :users, through: :GroupUsers
+- has_many :users, through: :group_users
+- has_many :group_users
 
-# GroupUsers
+# group_users
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
@@ -33,8 +33,8 @@
 # Messages
 |Column|Type|Options|
 |------|----|-------|
-|image|string|null: false|
-|body|text|null: false,|
+|image|string|
+|body|text|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
