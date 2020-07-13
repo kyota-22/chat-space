@@ -1,12 +1,12 @@
 .side-bar
   .side-bar__header
     .top-items
-      .top-items__name
-        masa
+      %h3.top-items__name
+        = current_user.name
       .top-items__icons
         = link_to "#" do
           = icon('far', 'edit',class: 'icon', "href": "#")
-        = link_to "#" do
+        = link_to edit_user_path(current_user) do
           = icon('fa', 'cog',class: 'icon', "href": "#")
 
   .side-bar__group-list
