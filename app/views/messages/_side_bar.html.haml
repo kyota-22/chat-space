@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+%html
+  %head
+    %meta{charset: "UTF-8"}
+    %link(rel = "stylesheet" href = "assets/stylesheets/modules/_messages.scss")
+
+%body
+
+.side-bar
+  .side-bar__header
+    .top-items
+      .top-items__name
+        masa
+      .top-items__icons
+        = link_to "#" do
+          = icon('far', 'edit',class: 'icon', "href": "#")
+        = link_to "#" do
+          = icon('fa', 'cog',class: 'icon', "href": "#")
+
+  .side-bar__group-list
+    .group-box
+      .group-box__name
+        techcamp
+      .group-box__message
+        まだメッセージがありません
+
+    .group-box
+      .group-box__name
+        techcamp
+      .group-box__message
+        まだメッセージがありません
+    
+    .group-box
+      .group-box__name
+        techcamp
+      .group-box__message
+        まだメッセージがありません
