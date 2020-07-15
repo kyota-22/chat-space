@@ -3,34 +3,22 @@
     .group-info
       .group-info__left
         .group-info__left--name
-          test
+          = @group.name
         .group-info__left--member
-          Member：masa
+          Member：
+          - @group.users.each do |user|
+            = user.name
       .group-info__right
-        = link_to "Edit", "#", class: "group-info__right--btn"
+        = link_to "Edit", edit_group_path(@group), class: "group-info__right--btn"
   .main__chat
-    .message-box
-      .message-box__user
-        .message-box__user--name
-          masa
-        .message-box__user--time
-          2019/11/20(wed)
-      .message-box__text
-        おはよう！
-    .message-box
-      .message-box__user
-        .message-box__user--name
-          masa
-        .message-box__user--time
-          2019/11/20(wed)
-      .message-box__text
-        こんにちは
+    = render @messages
+    -# インスタンス変数の名前を単数形にしたものと、
+    -# 部分テンプレートの名前が同じならこのような省略をすることができます。
   .main__form
-    .form-box
-      = form_with(class: :form) do |f|
-        = f.text_field :text, placeholder: "type a message", class: 'form-box__message'
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
+      .form-box
+        = f.text_field :content, placeholder: "type a message", class: 'form-box__message'
         = f.label :image, class: "form-box__icon" do
           %i.far.fa-image
           = f.file_field :image
-    = form_with do |f|
       = f.submit 'send',class: 'main__form--btn'
