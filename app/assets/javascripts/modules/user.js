@@ -20,6 +20,7 @@ $(function(){
   }
   
   function addMember(name, id) {
+    // ↑下記のから呼び出されて下記の処理を実行。引数からnameとidの値を取得
     let html = `
                 <div class="ChatMember">
                   <p class="ChatMember__name">${name}</p>
@@ -28,6 +29,7 @@ $(function(){
                 </div>
                 `;
     $(".ChatMembers").append(html);
+    //↑親要素ChatMemersの最後に上記のHTMLを追加
   }
 
   $("#UserSearch__field").on("keyup", function(){
@@ -56,13 +58,19 @@ $(function(){
   });
 
   $("#UserSearchResult").on("click", ".ChatMember__add",function(){
-    const userName = $(this).attr("data-user-id");
-    const userId = $(this).attr("data-user-name");
+    const userName = $(this).attr("data-user-name");
+    const userId = $(this).attr("data-user-id");
+    // ↑thisの中身はボタン。ボタンの属性に含まれる属性のidとnameを取得し代入
     $(this).parent().remove();
+    //↑ボタンの親要素である一人分の追加バーを削除
     addMember(userName, userId);
+    //↑上記の関数addMemberを呼び出し引数も渡す
   });
   $(".ChatMembers").on("click", ".ChatMember__remove", function() {
+    // addMenbers内のHTMLに記載がある.ChatMembers内のChatMember__remove（削除ボタン)
+    // がクリックされたら発火
     $(this).parent().remove();
+    // 削除ボタンが押されたユーザーのバーを削除this==.ChatMember__remove
   });
 });
 
