@@ -43,6 +43,7 @@ $(function(){
   let reloadMessages = function() {
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
     let last_message_id = $('.message-box:last').data("message-id") || 0;
+    console.log(last_message_id);
     $.ajax({
       //ルーティングで設定した通り/groups/id番号/api/messagesとなるよう文字列を書く
       ///groups/id番号まではすでに定義されているので相対パスで記述
@@ -64,6 +65,7 @@ $(function(){
         });
         //メッセージが入ったHTMLに、入れ物ごと追加
         $('.main__chat').append(insertHTML);
+        // console.log(insertHTML)
         $('.main__chat').animate({ scrollTop: $('.main__chat')[0].scrollHeight});
       }
     })
